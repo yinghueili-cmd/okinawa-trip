@@ -996,6 +996,427 @@ nav.bottom-nav {
   .title-block h1 { font-size: 22px; }
   .weather-day .icon { font-size: 20px; }
 }
+/* ============ 記帳功能 ============ */
+.rate-card {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFE4B5 100%);
+  border-left: 4px solid #FF8C42;
+}
+.rate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.rate-label {
+  font-weight: 700;
+  color: #5D4037;
+  font-size: 15px;
+}
+.rate-edit-btn {
+  background: #FF8C42;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.rate-display {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1A3D5C;
+  margin: 4px 0;
+}
+.rate-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.expense-summary {
+  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+  border-left: 4px solid #1A3D5C;
+}
+.exp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+.exp-label { color: #555; font-size: 14px; }
+.exp-value { font-size: 22px; font-weight: 700; color: #1A3D5C; }
+.exp-value.sub { font-size: 15px; color: #888; font-weight: 500; }
+.exp-value.remain { color: #2E7D32; font-size: 24px; }
+.exp-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin: 8px 0;
+}
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 4px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50 0%, #FF9800 70%, #F44336 100%);
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.daily-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.daily-stat-item {
+  background: #F5F5F5;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+.daily-stat-day {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+.daily-stat-amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1A3D5C;
+}
+
+.add-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 16px 0;
+  box-shadow: 0 4px 12px rgba(255,107,53,0.3);
+}
+.add-btn:active { transform: scale(0.98); }
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.expense-item {
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.expense-cat-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+.expense-info {
+  flex: 1;
+  min-width: 0;
+}
+.expense-cat-day {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 2px;
+}
+.expense-note {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.expense-amount {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1A3D5C;
+}
+.expense-amount-twd {
+  font-size: 12px;
+  color: #888;
+  margin-left: 4px;
+}
+.expense-receipt-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.expense-delete {
+  color: #F44336;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+}
+.empty-state {
+  text-align: center;
+  color: #888;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
+/* ============ 相簿 ============ */
+.album-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+.album-item {
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.album-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #F8F8F8;
+  border-bottom: 1px solid #E0E0E0;
+}
+.album-day-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A3D5C;
+}
+.album-time {
+  font-size: 12px;
+  color: #888;
+}
+.album-photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+.album-photos.single { grid-template-columns: 1fr; }
+.album-photo {
+  aspect-ratio: 1;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.album-photos.single .album-photo { aspect-ratio: 4/3; }
+.album-note {
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+.album-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 14px;
+  border-top: 1px solid #F0F0F0;
+}
+
+/* ============ Modal ============ */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.modal-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+}
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  background: white;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.25s ease-out;
+}
+.modal-content.small {
+  max-width: 360px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  max-height: 70vh;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #E0E0E0;
+  flex-shrink: 0;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1A3D5C;
+}
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+}
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+.form-row {
+  margin-bottom: 18px;
+}
+.form-row label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  background: white;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-row select {
+  background: white url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 10px center;
+  padding-right: 36px;
+}
+.form-row input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed #BBB;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.cat-btn {
+  padding: 12px 8px;
+  border: 2px solid #E0E0E0;
+  background: white;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.cat-btn.active {
+  background: #1A3D5C;
+  color: white;
+  border-color: #1A3D5C;
+}
+.amount-row {
+  display: flex;
+  gap: 8px;
+}
+.amount-row input { flex: 1; }
+.amount-row select { width: 110px; }
+.amount-convert {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #FF6B35;
+  font-weight: 600;
+  min-height: 18px;
+}
+#receipt-preview img,
+.photo-preview-grid img {
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+.photo-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+.photo-preview-grid img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin: 0;
+}
+.save-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #1A3D5C 0%, #2C5F8D 100%);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.save-btn:active { transform: scale(0.98); }
+
+/* ============ 大圖檢視 ============ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 </style>
 </head>
 <body>
@@ -1036,9 +1457,204 @@ nav.bottom-nav {
     <div id="day-container"></div>
   </section>
 
+  <!-- ============ 記帳 ============ -->
+  <section class="tab-content" id="tab-expense" hidden>
+    <h2 class="section-title">💴 旅遊記帳</h2>
+
+    <!-- 匯率設定 -->
+    <div class="card rate-card">
+      <div class="rate-row">
+        <div class="rate-label">💱 匯率設定</div>
+        <button class="rate-edit-btn" onclick="editRate()">編輯</button>
+      </div>
+      <div class="rate-display">
+        <span id="rate-display">1 JPY = 0.21 TWD</span>
+      </div>
+      <div class="rate-hint">建議出發前到台銀網查最新匯率 → 點「編輯」更新</div>
+    </div>
+
+    <!-- 總覽 -->
+    <div class="card expense-summary">
+      <div class="exp-row">
+        <div class="exp-label">已花費</div>
+        <div class="exp-value" id="total-spent">¥0</div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-label">換算台幣</div>
+        <div class="exp-value sub" id="total-spent-twd">≈ NT$0</div>
+      </div>
+      <div class="exp-divider"></div>
+      <div class="exp-row">
+        <div class="exp-label">預算上限</div>
+        <div class="exp-value sub">¥69,000</div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-label">剩餘預算</div>
+        <div class="exp-value remain" id="budget-remain">¥69,000</div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="budget-progress" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- 每日花費總覽 -->
+    <div class="card">
+      <div class="card-title">📊 每日花費</div>
+      <div class="daily-stats" id="daily-stats"></div>
+    </div>
+
+    <!-- 新增記帳按鈕 -->
+    <button class="add-btn" onclick="showExpenseForm()">
+      ➕ 新增一筆記帳
+    </button>
+
+    <!-- 記帳列表 -->
+    <div class="card">
+      <div class="card-title">📝 記帳紀錄</div>
+      <div id="expense-list" class="expense-list">
+        <div class="empty-state">還沒有任何記帳，按上方按鈕新增</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 相簿 ============ -->
+  <section class="tab-content" id="tab-album" hidden>
+    <h2 class="section-title">📸 旅行相簿</h2>
+
+    <div class="card info">
+      <div class="card-content">
+        記錄每一個美好瞬間 ✨ 可上傳多張照片、加文字說明、自動保存在手機
+      </div>
+    </div>
+
+    <!-- 新增照片按鈕 -->
+    <button class="add-btn" onclick="showPhotoForm()">
+      📷 新增照片紀錄
+    </button>
+
+    <!-- 日期篩選 -->
+    <div class="day-tabs" id="album-day-tabs">
+      <button class="day-tab active" data-album-day="all">全部</button>
+      <button class="day-tab" data-album-day="1"><span class="num">5/25</span></button>
+      <button class="day-tab" data-album-day="2"><span class="num">5/26</span></button>
+      <button class="day-tab" data-album-day="3"><span class="num">5/27</span></button>
+      <button class="day-tab" data-album-day="4"><span class="num">5/28</span></button>
+    </div>
+
+    <!-- 相簿列表 -->
+    <div id="album-list" class="album-list">
+      <div class="empty-state">還沒有任何照片，按上方按鈕新增</div>
+    </div>
+  </section>
+
+  <!-- 記帳表單 Modal -->
+  <div class="modal" id="expense-modal" hidden>
+    <div class="modal-bg" onclick="hideExpenseForm()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>新增記帳</h3>
+        <button class="modal-close" onclick="hideExpenseForm()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <label>日期</label>
+          <select id="exp-day">
+            <option value="1">Day 1 - 5/25 (一) 抵達</option>
+            <option value="2">Day 2 - 5/26 (二) 北部</option>
+            <option value="3">Day 3 - 5/27 (三) 奧武</option>
+            <option value="4">Day 4 - 5/28 (四) 離開</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>類別</label>
+          <div class="category-grid">
+            <button class="cat-btn" data-cat="餐飲">🍜 餐飲</button>
+            <button class="cat-btn" data-cat="購物">🛍️ 購物</button>
+            <button class="cat-btn" data-cat="交通">🚇 交通</button>
+            <button class="cat-btn" data-cat="門票">🎫 門票</button>
+            <button class="cat-btn" data-cat="住宿">🏨 住宿</button>
+            <button class="cat-btn" data-cat="其他">💼 其他</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>金額</label>
+          <div class="amount-row">
+            <input type="number" id="exp-amount" placeholder="輸入金額" inputmode="decimal">
+            <select id="exp-currency">
+              <option value="JPY">JPY (¥)</option>
+              <option value="TWD">TWD (NT$)</option>
+            </select>
+          </div>
+          <div class="amount-convert" id="amount-convert"></div>
+        </div>
+        <div class="form-row">
+          <label>備註（選填）</label>
+          <input type="text" id="exp-note" placeholder="例：大城天婦羅 ¥100x5">
+        </div>
+        <div class="form-row">
+          <label>收據（選填）</label>
+          <input type="file" id="exp-receipt" accept="image/*" capture="environment">
+          <div id="receipt-preview"></div>
+        </div>
+        <button class="save-btn" onclick="saveExpense()">儲存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 相簿表單 Modal -->
+  <div class="modal" id="photo-modal" hidden>
+    <div class="modal-bg" onclick="hidePhotoForm()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>新增照片</h3>
+        <button class="modal-close" onclick="hidePhotoForm()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <label>日期</label>
+          <select id="photo-day">
+            <option value="1">Day 1 - 5/25 (一) 抵達</option>
+            <option value="2">Day 2 - 5/26 (二) 北部</option>
+            <option value="3">Day 3 - 5/27 (三) 奧武</option>
+            <option value="4">Day 4 - 5/28 (四) 離開</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>照片（可多選）</label>
+          <input type="file" id="photo-files" accept="image/*" multiple capture="environment">
+          <div id="photo-preview" class="photo-preview-grid"></div>
+        </div>
+        <div class="form-row">
+          <label>說明（選填）</label>
+          <textarea id="photo-note" placeholder="例：奧武島貓貓超可愛！" rows="3"></textarea>
+        </div>
+        <button class="save-btn" onclick="savePhotos()">儲存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 匯率編輯 Modal -->
+  <div class="modal" id="rate-modal" hidden>
+    <div class="modal-bg" onclick="hideRateForm()"></div>
+    <div class="modal-content small">
+      <div class="modal-header">
+        <h3>編輯匯率</h3>
+        <button class="modal-close" onclick="hideRateForm()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <label>1 日幣 = ? 台幣</label>
+          <input type="number" id="rate-input" placeholder="例：0.21" step="0.001" inputmode="decimal">
+        </div>
+        <div class="rate-hint">建議到「台灣銀行」官網查看現金賣出匯率</div>
+        <button class="save-btn" onclick="saveRate()">儲存</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ 交通 ============ -->
   <section class="tab-content" id="tab-transport" hidden>
-    <h2 class="section-title">交通總覽</h2>
+    <h2 class="section-title">🚇 交通總覽</h2>
 
     <div class="card info">
       <div class="card-title">💳 Suica 卡可使用</div>
@@ -1096,7 +1712,7 @@ nav.bottom-nav {
 
   <!-- ============ 住宿 ============ -->
   <section class="tab-content" id="tab-hotel" hidden>
-    <h2 class="section-title">住宿資訊</h2>
+    <h2 class="section-title">🏨 住宿資訊</h2>
 
     <div class="hotel-card">
       <div class="hotel-name">maejima Hotel</div>
@@ -1165,7 +1781,8 @@ nav.bottom-nav {
 
   <!-- ============ 預算 ============ -->
   <section class="tab-content" id="tab-budget" hidden>
-    <h2 class="section-title">旅遊預算</h2>
+    <h2 class="section-title">💰 預算估算（參考）</h2>
+    <div class="info-note" style="margin-bottom:15px;color:#888;font-size:13px;">💡 此為預估，實際花費請到「記帳」記錄</div>
 
     <div class="budget-summary">
       <div class="label">當地預估總花費</div>
@@ -1348,21 +1965,21 @@ nav.bottom-nav {
     <span class="nav-icon">📅</span>
     <span class="nav-label">行程</span>
   </button>
-  <button class="nav-btn" data-tab="transport">
-    <span class="nav-icon">🚇</span>
-    <span class="nav-label">交通</span>
+  <button class="nav-btn" data-tab="expense">
+    <span class="nav-icon">💴</span>
+    <span class="nav-label">記帳</span>
   </button>
-  <button class="nav-btn" data-tab="hotel">
-    <span class="nav-icon">🏨</span>
-    <span class="nav-label">住宿</span>
+  <button class="nav-btn" data-tab="album">
+    <span class="nav-icon">📸</span>
+    <span class="nav-label">相簿</span>
   </button>
   <button class="nav-btn" data-tab="packing">
     <span class="nav-icon">🎒</span>
     <span class="nav-label">行李</span>
   </button>
-  <button class="nav-btn" data-tab="budget">
-    <span class="nav-icon">💰</span>
-    <span class="nav-label">預算</span>
+  <button class="nav-btn" data-tab="info">
+    <span class="nav-icon">ℹ️</span>
+    <span class="nav-label">資訊</span>
   </button>
 </nav>
 
@@ -1716,16 +2333,28 @@ function init() {
     });
   });
 
-  // Bottom nav switching
+  // Bottom nav switching - info 對應 transport+hotel+budget
+  const TAB_MAP = {
+    'itinerary': ['itinerary'],
+    'expense': ['expense'],
+    'album': ['album'],
+    'packing': ['packing'],
+    'info': ['transport', 'hotel', 'budget']
+  };
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const tab = btn.dataset.tab;
+      const matchIds = TAB_MAP[tab] || [tab];
       document.querySelectorAll('.tab-content').forEach(s => {
-        s.hidden = s.id !== `tab-${tab}`;
+        const id = s.id.replace('tab-', '');
+        s.hidden = !matchIds.includes(id);
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      // 切換 tab 時刷新對應內容
+      if (tab === 'expense') renderExpense();
+      if (tab === 'album') renderAlbum();
     });
   });
 
@@ -1743,6 +2372,389 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+/* ============ 記帳功能 ============ */
+const STORAGE_KEYS = {
+  expenses: 'okinawa-expenses',
+  photos: 'okinawa-photos',
+  rate: 'okinawa-rate'
+};
+
+const CAT_ICONS = {
+  '餐飲': '🍜', '購物': '🛍️', '交通': '🚇',
+  '門票': '🎫', '住宿': '🏨', '其他': '💼'
+};
+
+const DAY_LABELS = {
+  '1': '5/25 (一)', '2': '5/26 (二)',
+  '3': '5/27 (三)', '4': '5/28 (四)'
+};
+
+function getRate() {
+  return parseFloat(localStorage.getItem(STORAGE_KEYS.rate)) || 0.21;
+}
+
+function setRate(r) {
+  localStorage.setItem(STORAGE_KEYS.rate, r);
+  updateRateDisplay();
+}
+
+function updateRateDisplay() {
+  const r = getRate();
+  const el = document.getElementById('rate-display');
+  if (el) el.textContent = `1 JPY = ${r.toFixed(3)} TWD`;
+}
+
+function getExpenses() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEYS.expenses) || '[]');
+  } catch { return []; }
+}
+
+function saveExpensesList(list) {
+  localStorage.setItem(STORAGE_KEYS.expenses, JSON.stringify(list));
+}
+
+let selectedCat = null;
+let receiptData = null;
+
+function showExpenseForm() {
+  document.getElementById('expense-modal').hidden = false;
+  // 重置
+  document.getElementById('exp-amount').value = '';
+  document.getElementById('exp-note').value = '';
+  document.getElementById('exp-receipt').value = '';
+  document.getElementById('receipt-preview').innerHTML = '';
+  document.getElementById('amount-convert').textContent = '';
+  selectedCat = null;
+  receiptData = null;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+}
+
+function hideExpenseForm() {
+  document.getElementById('expense-modal').hidden = true;
+}
+
+function saveExpense() {
+  const day = document.getElementById('exp-day').value;
+  const amount = parseFloat(document.getElementById('exp-amount').value);
+  const currency = document.getElementById('exp-currency').value;
+  const note = document.getElementById('exp-note').value;
+
+  if (!selectedCat) {
+    alert('請選擇類別');
+    return;
+  }
+  if (!amount || amount <= 0) {
+    alert('請輸入金額');
+    return;
+  }
+
+  // 統一存成 JPY
+  const rate = getRate();
+  const jpy = currency === 'JPY' ? amount : amount / rate;
+
+  const list = getExpenses();
+  list.push({
+    id: Date.now(),
+    day, cat: selectedCat,
+    amount: Math.round(jpy),
+    originalAmount: amount,
+    originalCurrency: currency,
+    note,
+    receipt: receiptData,
+    time: new Date().toISOString()
+  });
+  saveExpensesList(list);
+  hideExpenseForm();
+  renderExpense();
+}
+
+function deleteExpense(id) {
+  if (!confirm('確定刪除這筆記帳？')) return;
+  const list = getExpenses().filter(e => e.id !== id);
+  saveExpensesList(list);
+  renderExpense();
+}
+
+function renderExpense() {
+  const list = getExpenses();
+  const rate = getRate();
+  const totalJpy = list.reduce((s, e) => s + e.amount, 0);
+  const totalTwd = Math.round(totalJpy * rate);
+  const budget = 69000;
+  const remain = budget - totalJpy;
+  const pct = Math.min(100, (totalJpy / budget) * 100);
+
+  document.getElementById('total-spent').textContent = `¥${totalJpy.toLocaleString()}`;
+  document.getElementById('total-spent-twd').textContent = `≈ NT$${totalTwd.toLocaleString()}`;
+  const remainEl = document.getElementById('budget-remain');
+  remainEl.textContent = `¥${remain.toLocaleString()}`;
+  remainEl.style.color = remain < 0 ? '#F44336' : '#2E7D32';
+  document.getElementById('budget-progress').style.width = pct + '%';
+
+  // 每日統計
+  const dailyEl = document.getElementById('daily-stats');
+  dailyEl.innerHTML = '';
+  for (let d = 1; d <= 4; d++) {
+    const dayTotal = list.filter(e => e.day == d).reduce((s, e) => s + e.amount, 0);
+    dailyEl.innerHTML += `
+      <div class="daily-stat-item">
+        <div class="daily-stat-day">Day ${d} - ${DAY_LABELS[d]}</div>
+        <div class="daily-stat-amount">¥${dayTotal.toLocaleString()}</div>
+      </div>
+    `;
+  }
+
+  // 列表
+  const listEl = document.getElementById('expense-list');
+  if (list.length === 0) {
+    listEl.innerHTML = '<div class="empty-state">還沒有任何記帳，按上方按鈕新增</div>';
+    return;
+  }
+  // 按時間倒序
+  list.sort((a, b) => new Date(b.time) - new Date(a.time));
+  listEl.innerHTML = list.map(e => `
+    <div class="expense-item">
+      <div class="expense-cat-icon">${CAT_ICONS[e.cat] || '💼'}</div>
+      <div class="expense-info">
+        <div class="expense-cat-day">Day ${e.day} ・ ${e.cat}</div>
+        <div class="expense-note">${e.note || '(無備註)'}</div>
+        <div>
+          <span class="expense-amount">¥${e.amount.toLocaleString()}</span>
+          <span class="expense-amount-twd">≈ NT$${Math.round(e.amount * rate).toLocaleString()}</span>
+        </div>
+      </div>
+      ${e.receipt ? `<span class="expense-receipt-icon" onclick="showLightbox('${e.receipt}')">🧾</span>` : ''}
+      <button class="expense-delete" onclick="deleteExpense(${e.id})">🗑</button>
+    </div>
+  `).join('');
+}
+
+/* ============ 匯率編輯 ============ */
+function editRate() {
+  document.getElementById('rate-modal').hidden = false;
+  document.getElementById('rate-input').value = getRate();
+}
+function hideRateForm() {
+  document.getElementById('rate-modal').hidden = true;
+}
+function saveRate() {
+  const v = parseFloat(document.getElementById('rate-input').value);
+  if (!v || v <= 0) { alert('請輸入有效匯率'); return; }
+  setRate(v);
+  hideRateForm();
+  renderExpense();
+}
+
+/* ============ 拍照記錄 ============ */
+let photoTempData = []; // 暫存待上傳的照片 base64
+
+function getPhotos() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEYS.photos) || '[]');
+  } catch { return []; }
+}
+
+function savePhotosList(list) {
+  try {
+    localStorage.setItem(STORAGE_KEYS.photos, JSON.stringify(list));
+  } catch (e) {
+    alert('儲存空間不足，請刪除一些照片後再試');
+  }
+}
+
+function showPhotoForm() {
+  document.getElementById('photo-modal').hidden = false;
+  document.getElementById('photo-files').value = '';
+  document.getElementById('photo-note').value = '';
+  document.getElementById('photo-preview').innerHTML = '';
+  photoTempData = [];
+}
+
+function hidePhotoForm() {
+  document.getElementById('photo-modal').hidden = true;
+  photoTempData = [];
+}
+
+function savePhotos() {
+  if (photoTempData.length === 0) {
+    alert('請先選擇照片');
+    return;
+  }
+  const day = document.getElementById('photo-day').value;
+  const note = document.getElementById('photo-note').value;
+
+  const list = getPhotos();
+  list.push({
+    id: Date.now(),
+    day,
+    photos: photoTempData,
+    note,
+    time: new Date().toISOString()
+  });
+  savePhotosList(list);
+  hidePhotoForm();
+  renderAlbum();
+}
+
+function deletePhotoRecord(id) {
+  if (!confirm('確定刪除這個照片紀錄？')) return;
+  const list = getPhotos().filter(p => p.id !== id);
+  savePhotosList(list);
+  renderAlbum();
+}
+
+let currentAlbumDay = 'all';
+
+function renderAlbum() {
+  const list = getPhotos();
+  const filtered = currentAlbumDay === 'all'
+    ? list
+    : list.filter(p => p.day === currentAlbumDay);
+  const listEl = document.getElementById('album-list');
+
+  if (filtered.length === 0) {
+    listEl.innerHTML = '<div class="empty-state">這個日期還沒有照片</div>';
+    return;
+  }
+  // 按時間倒序
+  filtered.sort((a, b) => new Date(b.time) - new Date(a.time));
+  listEl.innerHTML = filtered.map(p => {
+    const date = new Date(p.time);
+    const timeStr = `${date.getMonth()+1}/${date.getDate()} ${String(date.getHours()).padStart(2,'0')}:${String(date.getMinutes()).padStart(2,'0')}`;
+    const photoHtml = p.photos.map(src => `<img class="album-photo" src="${src}" onclick="showLightbox('${src.replace(/'/g, "\\'")}')">`).join('');
+    return `
+      <div class="album-item">
+        <div class="album-header">
+          <span class="album-day-tag">Day ${p.day} ・ ${DAY_LABELS[p.day]}</span>
+          <span class="album-time">${timeStr}</span>
+        </div>
+        <div class="album-photos ${p.photos.length === 1 ? 'single' : ''}">${photoHtml}</div>
+        ${p.note ? `<div class="album-note">${p.note}</div>` : ''}
+        <div class="album-actions">
+          <button class="expense-delete" onclick="deletePhotoRecord(${p.id})">🗑 刪除</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+/* ============ 大圖檢視 ============ */
+function showLightbox(src) {
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.innerHTML = `
+    <button class="lightbox-close">✕</button>
+    <img src="${src}">
+  `;
+  box.onclick = () => box.remove();
+  document.body.appendChild(box);
+}
+
+/* ============ 圖片壓縮 ============ */
+function compressImage(file, maxWidth = 1200, quality = 0.7) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        let w = img.width, h = img.height;
+        if (w > maxWidth) {
+          h = h * (maxWidth / w);
+          w = maxWidth;
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = reject;
+      img.src = e.target.result;
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+/* ============ 初始化記帳/相簿事件 ============ */
+function initExpenseAlbumEvents() {
+  updateRateDisplay();
+
+  // 類別選擇
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedCat = btn.dataset.cat;
+    });
+  });
+
+  // 金額換算即時顯示
+  const updateConvert = () => {
+    const amount = parseFloat(document.getElementById('exp-amount').value);
+    const currency = document.getElementById('exp-currency').value;
+    const rate = getRate();
+    const el = document.getElementById('amount-convert');
+    if (!amount || amount <= 0) { el.textContent = ''; return; }
+    if (currency === 'JPY') {
+      el.textContent = `≈ NT$${Math.round(amount * rate).toLocaleString()}`;
+    } else {
+      el.textContent = `≈ ¥${Math.round(amount / rate).toLocaleString()}`;
+    }
+  };
+  document.getElementById('exp-amount').addEventListener('input', updateConvert);
+  document.getElementById('exp-currency').addEventListener('change', updateConvert);
+
+  // 收據上傳預覽
+  document.getElementById('exp-receipt').addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      receiptData = await compressImage(file, 1000, 0.6);
+      document.getElementById('receipt-preview').innerHTML = `<img src="${receiptData}">`;
+    } catch (err) {
+      alert('照片處理失敗');
+    }
+  });
+
+  // 多張照片上傳預覽
+  document.getElementById('photo-files').addEventListener('change', async (e) => {
+    const files = Array.from(e.target.files);
+    if (files.length === 0) return;
+    photoTempData = [];
+    const preview = document.getElementById('photo-preview');
+    preview.innerHTML = '處理中...';
+    try {
+      for (const file of files) {
+        const data = await compressImage(file, 1200, 0.7);
+        photoTempData.push(data);
+      }
+      preview.innerHTML = photoTempData.map(src => `<img src="${src}">`).join('');
+    } catch (err) {
+      alert('照片處理失敗');
+      preview.innerHTML = '';
+    }
+  });
+
+  // 相簿日期切換
+  document.querySelectorAll('#album-day-tabs .day-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#album-day-tabs .day-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentAlbumDay = btn.dataset.albumDay;
+      renderAlbum();
+    });
+  });
+
+  // 初始載入
+  renderExpense();
+  renderAlbum();
+}
+
+document.addEventListener('DOMContentLoaded', initExpenseAlbumEvents);
 </script>
 
 </body>
